@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			font-family: montserrat;
+			font-weight: bold;
+			background-color: #212121;
+			color: #e6e6e6;
+
+		}
+		label{
+			margin: 0px;
+		}
+		input{
+    		width: 100%;
+    		padding :1%;
+    		margin-top:2%;
+    		margin-bottom: 2%;
+    		box-sizing: border-box;
+    		border-radius: 3px;
+    		border-width: 1px;
+    		border-color: #543213
+		}
+		.input{
+    		width: 100%;
+    		padding :1%;
+    		margin-top:2%;
+    		margin-bottom: 2%;
+    		box-sizing: border-box;
+    		border-radius: 3px;
+    		border-width: 1px;
+    		border-color: #543213
+		}
+		button {
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.red{
+    		background-color: #dc143c;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.green{
+    		background-color: #00ff7f;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		a{
+
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.control{
+    		padding-top: 5%;
+    		padding-right: 20%;
+    		padding-bottom: 11%;
+    		padding-left: 20%;
+		}
+		.control2{
+    		padding-top: 5%;
+    		padding-right: 30%;
+    		padding-bottom: 5%;
+    		padding-left: 30%;
+		}
+		.head{
+			padding: 0;
+			margin:0px;
+			background-color: #000022
+		}
+		h1{
+			font-size: 27px;
+			color: #ffa500;
+		}
+		.error{
+			font-weight: normal;
+			color: #dc143c;
+		}
+		p{
+			font-size: 15px;
+		}
+		.container{
+			margin-top: 1%;
+			border: 2px solid #ffa500;
+			border-radius: 4px;
+
+		}
+		select{
+			font-family: montserrat;
+		}
+
+	</style>
+	<div class ="control">
+		<div class="container">
+			<div class="control">			
+			<h1>Enter the Details to confirm application :)</h1><br>
+			<form method="POST">{% csrf_token %}
+			<label>Aadhar_id : </label>	
+			<select class="input" name ="aadhar_id" required>	
+				<option value="">Select Aadhar ID</option>
+				<option value="Aadhar_id">{{object}}</option>
+			</select>	
+			<label>Scheme_Name : </label>
+			<select class="input" name="scheme" required>
+				<option value="">Select Scheme ID</option>
+				{% for object in scheme %}
+				<option value="{{object}}">{{object}}</option>
+			{% endfor %}
+			</select>
+			{% if flag %}
+				<p class="error">Application for this scheme already submitted by user :) </p>
+			{% elif value %}
+				<p class="error">Aadhar ID required!</p>	
+			{% endif %}
+			<button class="green" type="submit">Apply</button><br>
+			</form>
+			<br><a class ="red" href="{% url 'user.views.scheme_view' %}">Go Back</a>		
+		</div>
+		</div>
+	</div>
+	
+</body>
+</html>

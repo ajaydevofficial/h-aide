@@ -1,0 +1,131 @@
+		body{
+			margin: 0px;
+			font-family: montserrat;
+			font-weight: bold;
+			text-align: center;
+		}
+		label{
+			margin: 0px;
+		}
+		input{
+    		width: 100%;
+    		padding :1%;
+    		margin-top:2%;
+    		margin-bottom: 2%;
+    		box-sizing: border-box;
+    		border-radius: 3px;
+    		border-width: 1px;
+    		border-color: #543213
+		}
+		button {
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		a{
+
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.control{
+    		padding-top: 5%;
+    		padding-right: 20%;
+    		padding-bottom: 11%;
+    		padding-left: 20%;
+    		
+		}
+		.control2{
+    		padding-top: 5%;
+    		padding-right: 30%;
+    		padding-bottom: 5%;
+    		padding-left: 30%;
+		}
+		.red{
+    		background-color: #dc143c;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.green{
+    		background-color: #00ff7f;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.yellow{
+    		background-color: #ffd700;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.orange{
+    		background-color: #ffa500;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.head{
+			padding: 0;
+			margin:0px;
+			background-color: #000022
+		}
+		h1{
+			font-size: 62px;
+			text-align: center;
+		}
+		p{
+			margin: 3%;
+		}
+		.about{
+			font-weight: normal;
+		}

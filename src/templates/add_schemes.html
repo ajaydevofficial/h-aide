@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			font-family: montserrat;
+			font-weight: bold;
+			background-color: #212121;
+			color: #e6e6e6;
+		}
+		label{
+			margin: 0px;
+		}
+		.form-control{
+    		width: 100%;
+    		padding :1%;
+    		margin:10px 0;
+    		box-sizing: border-box;
+    		border-radius: 3px;
+    		border-width: 1px;
+    		border-color: #543213
+		}
+		button {
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.button2 {
+
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.red{
+    		background-color: #dc143c;
+   			border-radius: 3px;
+   			border:none;
+    		color: #212121;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.green{
+    		background-color: #00ff7f;
+   			border-radius: 3px;
+   			border:none;
+    		color: #212121;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.control{
+    		padding-top: 2%;
+    		padding-right: 20%;
+    		padding-bottom: 5%;
+    		padding-left: 20%;
+		}
+		.control2{
+    		padding-top: 5%;
+    		padding-right: 30%;
+    		padding-bottom: 5%;
+    		padding-left: 30%;
+		}
+		.head{
+			background-color: #000022
+		}
+		h1{
+			font-size: 42px;
+			color: #ffa500;
+		}
+		.container{
+			margin-top: 1%;
+			border: 2px solid #ffa500;
+			border-radius: 4px;
+
+		}
+
+	</style>
+	{% if request.user.is_authenticated %}
+	<div class="head">
+				
+	</div>
+	<div>
+		<div class="control">
+			<div class="container">
+				<form method="POST">{% csrf_token %}
+				<div class="control">
+					{% if request.user.is_superuser %}
+					<h1>Fill up The Details :)</h1>
+					{% if invalid %}
+						<p class="error">User Already submitted Details! Visit homepage to edit details </p>
+						<a class="red" href="{% url 'views.home_page' %}">Go Back</a>
+					{% else %}	
+					{{form}}
+					<button class ="green" type="submit">Submit</button>
+					<br><br>
+					<a class="red" href="{% url 'views.home_page' %}">Go Back</a>
+					{% endif %}
+					{% else %}
+					 	<h1>Not Admin </h1>
+					{% endif %}
+
+				</div>	
+			</form>
+			</div>
+		</div>
+	</div>
+
+	
+
+	{% else %}
+	<div class="control2">
+		<div class="control2">
+			<h1>Oops! :(</h1>
+			<p>User not logged in! Login to view this page</p>
+			<a class="green" href="{% url 'views.login_page' %}">Login</a>
+		</div>
+	</div>
+	
+
+	{% endif %}
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+		<style type="text/css">
+		body{
+			margin: 0px;
+			font-family: montserrat;
+			font-weight: bold;
+			color: #e6e6e6;
+			background-color: #212121;
+		}
+		label{
+			margin: 0px;
+		}
+		input{
+    		width: 100%;
+    		padding :1%;
+    		margin-top:2%;
+    		margin-bottom: 2%;
+    		box-sizing: border-box;
+    		border-radius: 3px;
+    		border-width: 1px;
+    		border-color: #543213
+		}
+		button {
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		a{
+
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.control{
+    		padding-top: 5%;
+    		padding-right: 20%;
+    		padding-bottom: 11%;
+    		padding-left: 20%;
+    		background-image: url("");
+		}
+		.control2{
+    		padding-top: 2%;
+    		padding-right: 10%;
+    		padding-bottom: 2%;
+    		padding-left: 10%;
+		}
+		.red{
+    		background-color: #dc143c;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.green{
+    		background-color: #00ff7f;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.yellow{
+    		background-color: #ffd700;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.orange{
+    		background-color: #ffa500;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.head{
+			padding: 0;
+			margin:0px;
+			background-color: #181818;
+
+		}
+		h1{
+
+			font-size: 250%;
+			text-align: center;
+			color: #ffa500;
+
+
+		}
+		.hdiv{
+			border: 2px solid #ffa500;
+			border-radius: 4px;
+
+		}
+		.container{
+			margin-top: 1%;
+			border: 2px solid #ffa500;
+			border-radius: 4px;
+
+		}
+		p{
+			margin-top: 2%;
+			margin-bottom: 2%;
+		}
+		.about{
+			font-weight: normal;
+		}
+		h2{
+			color: #212121;
+			margin: 0;
+		}
+		.white{
+			margin: 1px;
+			text-align: center;
+			color: #e6e6e6;
+		}
+		.error{
+			color: #dc143c;
+		}
+			
+
+	</style>
+	<div class ="control">
+		<div class="container">
+			<div class="control">
+			<h1>Login Here :)</h1>
+			<form method="POST" class="form-control">{% csrf_token %}
+			{{form}}
+			{% if invalid %}
+			<p class="error">Password incorrect :(</p>
+			{% endif %}
+			<button class ="green" type="submit">Login</button>
+			<p>New User ? </p>
+			<a class="orange" href="{% url 'views.register_page' %}">Register</a>
+			<a class="red" href="{% url 'views.home_page' %}">Go Back</a>
+			</div>
+		</form>
+	</div>
+		
+	</div>
+	
+</body>
+</html>

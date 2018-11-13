@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			font-family: montserrat;
+			font-weight: bold;
+			text-align: center;
+			color: #e6e6e6;
+			background-color: #212121;
+		}
+		label{
+			margin: 0px;
+		}
+		input{
+    		width: 100%;
+    		padding :1%;
+    		margin-top:2%;
+    		margin-bottom: 2%;
+    		box-sizing: border-box;
+    		border-radius: 3px;
+    		border-width: 1px;
+    		border-color: #543213
+		}
+		button {
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		a{
+
+    		background-color: #000022;
+   			border-radius: 3px;
+   			border:none;
+    		color: white;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.control{
+    		padding-top: 5%;
+    		padding-right: 20%;
+    		padding-bottom: 11%;
+    		padding-left: 20%;
+    		background-image: url("");
+		}
+		.control2{
+    		padding-top: 2%;
+    		padding-right: 10%;
+    		padding-bottom: 2%;
+    		padding-left: 10%;
+		}
+		.red{
+    		background-color: #dc143c;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.green{
+			margin: 1%;
+    		background-color: #00ff7f;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.yellow{
+    		background-color: #ffd700;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.orange{
+    		background-color: #ffa500;
+   			border-radius: 3px;
+   			border:none;
+    		color: #171717;
+   			padding: 1.5%;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-family: montserrat;
+    		font-weight: bold;
+    		font-size: 16px;
+
+		}
+		.head{
+			padding: 0;
+			margin:0px;
+			background-color: #181818;
+
+		}
+		h1{
+
+			font-size: 250%;
+			text-align: center;
+			color: #ffa500;
+
+
+		}
+		.hdiv{
+			border: 2px solid #ffa500;
+			border-radius: 4px;
+
+		}
+		.container{
+			margin-top: 1%;
+			border: 2px solid #ffa500;
+			border-radius: 4px;
+
+		}
+		p{
+			margin: 3%;
+		}
+		.about{
+			font-weight: normal;
+		}
+		h2{
+			color: #212121;
+			margin: 0;
+		}
+		.white{
+			margin: 1px;
+			text-align: center;
+			color: #e6e6e6;
+		}
+			
+
+	</style>
+	{% if not request.user.is_authenticated %}
+	<div class="control"><div class="control2">
+		<div class="hdiv"><h1>H-Aide</h1></div>
+		<br>
+		<div>
+			<p>You are Viewing Basic Contents of This page</p><br>
+        	<p>Login to View Premium Content</p>
+        	<a class="green" href="{% url 'views.login_page' %}">Login</a>
+        	<p>New User ?</p>
+        	<a class="orange" href="{% url 'views.register_page' %}">Register</a>
+		</div>
+		<br>
+		<div class="container">
+		<h3>About us</h3>	
+		<p class="about">H-Aide is a website for the handicapped people for applying and alloting grants provided by the government for them. The government grants are directly alloted through this website</p><br></div>
+	</div>
+	</div>
+	{% else %}
+	<div class="control">
+		<div class="hdiv">
+			<h1>Welcome {{ user.get_username }} :)</h1><br><br>
+        	<p>Thanks for being a part of H-Aide</p><br>
+        	<a class="green" href="{% url 'views.details_page' %}">Add Details</a>
+        	<a class="green" href="{% url 'user.views.details_view' %}">View Details</a>
+        	<a class="green" href="{% url 'user.views.scheme_view' %}">View Schemes</a>
+        	<br><br><br>	
+		</div>
+		<br>
+		<a class="orange" href="/logout/">Logout</a>
+		
+	</div>
+	{% endif %}
+</body>
+</html>
